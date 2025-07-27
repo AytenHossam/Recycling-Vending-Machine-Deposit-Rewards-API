@@ -99,9 +99,8 @@ in json
 ## Notes
 - All usernames are unique.
 - Only valid material types are accepted.
-- Users can only see their own deposit summary.
-- Admins can manage machines and view all deposits.
-- Uses DRF permissions to restrict access.
+- Users can only see their deposit summary.
+- Admins can add machines and view all deposits.
 - Points are stored as floats and rounded to 1 decimal place for precision.
 
 ## Testing Workflow

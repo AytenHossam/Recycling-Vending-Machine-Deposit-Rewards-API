@@ -34,28 +34,28 @@
 ### User Endpoints
 
 #### **No Authentication Required:**
-- `POST /api/register/` — Register user (`username`, `email`, `password`)
-- `POST /api/login/` — Login with `email` & `password` (returns JWT tokens)
-- `GET /api/deposit-info/` — Public info: available machines & reward rates
+- `POST /api/register/` — > Register user (`username`, `email`, `password`)
+- `POST /api/login/` — > Login with `email` & `password` (returns JWT tokens)
+- `GET /api/deposit-info/` — > Public info: available machines & reward rates
 
 #### **JWT Authentication Required:**
-- `POST /api/deposit/` — Log deposit
+- `POST /api/deposit/` — > Log deposit
   - `material_type`: "plastic", "metal", "glass"
   - `weight`: float (kg)
   - `machine_id`: int
-- `GET /api/summary/` — Get recycling summary by material type
+- `GET /api/summary/` — > Get recycling summary by material type
 
 ### Admin Endpoints
 
 #### **No Authentication Required:**
-- `POST /api/admin/register/` — Register admin (`username`, `email`, `company_id`, `password`)
-- `POST /api/admin/login/` — Login with `username` & `password` (returns JWT tokens, only for admins)
+- `POST /api/admin/register/` — > Register admin (`username`, `email`, `company_id`, `password`)
+- `POST /api/admin/login/` — > Login with `username` & `password` (returns JWT tokens, only for admins)
 
 #### **Admin JWT Authentication Required:**
-- `GET /api/machines/` — List all machines (admin only)
-- `POST /api/machines/` — Add new machine (admin only)
+- `GET /api/machines/` — > List all machines (admin only)
+- `POST /api/machines/` — > Add new machine (admin only)
   - **Body:** `{"location": "Lobby", "status": "active"}`
-- `GET /api/admin/deposits/` — View all deposits (admin only)
+- `GET /api/admin/deposits/` — > View all deposits (admin only)
 
 ## Authentication Requirements
 
@@ -93,8 +93,8 @@ in json
 
 
 ## Authentication Flow
-- **Users:** Register/login, receive JWT tokens, use `Authorization: Bearer <token>` header for all requests.
-- **Admins:** Register/login, must have `is_staff=True`, use JWT tokens as above. Only admins can access `/machines/` and `/admin/` endpoints.
+- **Users:** Register, login, receive JWT tokens, use `Authorization: Bearer <token>` header for all requests.
+- **Admins:** Register, login, must have `is_staff=True`, use JWT tokens as above. Only admins can access `/machines/` and `/admin/` endpoints.
 
 ## Notes
 - All usernames are unique.

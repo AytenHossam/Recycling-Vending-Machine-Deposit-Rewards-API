@@ -57,22 +57,6 @@
   - **Body:** `{"location": "Lobby", "status": "active"}`
 - `GET /api/admin/deposits/` — > View all deposits (admin only)
 
-## Authentication Requirements
-
-### **User Authentication:**
-- **Registration/Login:** No token required
-- **Deposit Logging:** Requires valid user JWT token
-- **Summary View:** Requires valid user JWT token
-- **Header Format:** `Authorization: Bearer <user_access_token>`
-
-### **Admin Authentication:**
-- **Registration/Login:** No token required
-- **Machine Management:** Requires valid admin JWT token (`is_staff=True`)
-- **View All Deposits:** Requires valid admin JWT token (`is_staff=True`)
-- **Header Format:** `Authorization: Bearer <admin_access_token>`
-
-### **Public Endpoints:**
-- **Deposit Info:** No authentication required
 
 ## Reward Points Calculation
 - Plastic: 1 point/kg
@@ -80,17 +64,6 @@
 - Glass: 2 points/kg
 - **Points are calculated as floats and wrote down to the nearest 1st decimal**
 - Example: 1.88999987 kg plastic = 1.8 points
-
-## Summary Response Format
-The `/api/summary/` endpoint returns:
-in json
-{
-  "plastic_weight": 2.5,
-  "metal_weight": 1.0,
-  "glass_weight": 0.0,
-  "total_points": 5.5
-}
-
 
 ## Authentication Flow
 - **Users:** Register, login, receive JWT tokens, use `Authorization: Bearer <token>` header for all requests.

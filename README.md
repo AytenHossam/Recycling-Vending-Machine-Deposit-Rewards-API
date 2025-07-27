@@ -3,8 +3,8 @@
 ## Technologies
 - Django
 - Django REST Framework
-- SQLite (default)
-- SimpleJWT (token authentication)
+- SQLite 
+- SimpleJWT -> token authentication
 
 ## Setup Instructions
 
@@ -20,7 +20,7 @@
    python manage.py makemigrations
    python manage.py migrate
    ```
-4. **Create superuser (optional, for admin panel):**
+4. **Create superuser (for admin panel):**
    ```bash
    python manage.py createsuperuser
    ```
@@ -105,6 +105,6 @@ The `/api/summary/` endpoint returns:
 - Points are stored as floats and rounded to 1 decimal place for precision.
 
 ## Testing Workflow
-**Before testing the user part, it's better to first register or log in as an admin, then add a machine. This way, when a user wants to deposit something, there will be a machine to choose from using its machineID.**
+**Before testing the user part it's better to first register or log in as an admin then add a machine. This way, when a user wants to deposit something, there will be a machine to choose from using its machineID.**
 
 If you're not sure whether machines already exist, just do a GET request to `/api/deposit-info/` — it will show you the list of machines you can use for deposits. 

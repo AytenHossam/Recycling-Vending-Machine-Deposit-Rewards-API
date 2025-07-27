@@ -83,14 +83,14 @@
 
 ## Summary Response Format
 The `/api/summary/` endpoint returns:
-```json
+in json
 {
   "plastic_weight": 2.5,
   "metal_weight": 1.0,
   "glass_weight": 0.0,
   "total_points": 5.5
 }
-```
+
 
 ## Authentication Flow
 - **Users:** Register/login, receive JWT tokens, use `Authorization: Bearer <token>` header for all requests.
